@@ -15,9 +15,9 @@
 
 Many [Github](https://github.com/) users have a large number of repositories upon which they work, and managing them all can sometimes be difficult.
 
-One excellent tool which helps a lot is the [myrepos](https://myrepos.branchable.com/) package, containing a binary named `mr`, which allows you to run many operations upon multiple repositories with one command.  (It understangs git, mercurial, darcs, cvs, and many other types of revision-control systems.)
+One excellent tool which helps a lot is the [myrepos](https://myrepos.branchable.com/) package, containing a binary named `mr`, which allows you to run many operations upon multiple repositories with one command.  (It understands git, mercurial, darcs, cvs, and many other types of revision-control systems.)
 
-This repository contains a simple command-line client which allows you to easily generate a configuration file containing __all__ your github repositories, which will allow you to operate upon your repositories, cloning them onto new machiens, etc, easily, quickly and reliably.
+This repository contains a simple command-line client which allows you to easily generate a configuration file containing __all__ your github repositories fetching them via the [Github API](https://developer.github.com/v3/) with various filtering and limiting options.
 
 The end result of using `mr` and `github2mr` is that you should be able to clone all your remote github repositories, and update them easily with only a couple of commands which is great for when you work/develop/live on multiple machines.
 
