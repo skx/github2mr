@@ -1,4 +1,6 @@
 
+# Contents
+
 * [github2mr](#github2mr)
   * [Brief mr Example](#brief-mr-example)
 * [Installation](#installation)
@@ -11,9 +13,11 @@
 
 # github2mr
 
-Many [Github](https://github.com/) users have a large number of repositories upon which they work.  This application allows you to dump all your repository details into a configuration file for [myrepos](https://myrepos.branchable.com/).
+Many [Github](https://github.com/) users have a large number of repositories upon which they work, and managing them all can sometimes be difficult.
 
-The myrepos package, containing a binary named `mr`, is a _wonderful_ tool that lets you apply operations to multiple repositories at once given a suitable configuration.
+One excellent tool which helps a lot is the [myrepos](https://myrepos.branchable.com/) package, containing a binary named `mr`, which allows you to run many operations upon multiple repositories with one command.  (It understangs git, mercurial, darcs, cvs, and many other types of revision-control systems.)
+
+This repository contains a simple command-line client which allows you to easily generate a configuration file containing __all__ your github repositories, which will allow you to operate upon your repositories, cloning them onto new machiens, etc, easily, quickly and reliably.
 
 The end result of using `mr` and `github2mr` is that you should be able to clone all your remote github repositories, and update them easily with only a couple of commands which is great for when you work/develop/live on multiple machines.
 
@@ -103,13 +107,12 @@ Notice that the value of the `Authorization`-header begins with `Bearer`?  Gitbu
 
 # Github Setup
 
-This repository is configured to run tests upon every commit, and when
-pull-requests are created/updated.  The testing is carried out via
-[.github/run-tests.sh](.github/run-tests.sh) which is used by the
-[github-action-tester](https://github.com/skx/github-action-tester) action.
+This repository is configured to run tests upon every commit, and when pull-requests are created/updated.  The testing is carried out via [.github/run-tests.sh](.github/run-tests.sh) which is used by the [github-action-tester](https://github.com/skx/github-action-tester) action.
 
-Releases are automated in a similar fashion via [.github/build](.github/build),
-and the [github-action-publish-binaries](https://github.com/skx/github-action-publish-binaries) action.
+Releases are automated in a similar fashion via [.github/build](.github/build), and the [github-action-publish-binaries](https://github.com/skx/github-action-publish-binaries) action.
+
+Currently these are reporting failures; but I'm in the process of fixing them.
+
 
 
 Steve
