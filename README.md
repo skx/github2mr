@@ -1,4 +1,6 @@
 
+# Contents
+
 * [github2mr](#github2mr)
   * [Brief mr Example](#brief-mr-example)
 * [Installation](#installation)
