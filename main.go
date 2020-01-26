@@ -187,6 +187,7 @@ func main() {
 	getOrgs := flag.String("organizations", "all", "Which organizational repositories to fetch.\nValid values are 'public', 'private', 'none', or 'all'.")
 	getPersonal := flag.String("personal", "all", "Which personal repositories to fetch.\nValid values are 'public', 'private', 'none', or 'all'.")
 	http := flag.Bool("http", false, "Generate HTTP-based clones rather than SSH-based ones.")
+	ssh := flag.Bool("ssh", false, "Add 'ssh://'-prefix to the git clone command.")
 	output := flag.String("output", "", "Write output to the named file, instead of printing to STDOUT.")
 	prefix := flag.String("prefix", "", "The prefix beneath which to store the repositories upon the current system.")
 	token := flag.String("token", "", "The API token used to authenticate to the remote API-host.")
@@ -366,6 +367,18 @@ func main() {
 		if *http {
 			clone = *repo.CloneURL
 		}
+
+		//
+		// Sometimes SSH clones need a prefix
+		//
+		if *ssh {
+			clone = "ssh://" + clone
+		}
+
+		//
+		// Hack!
+		//
+		clone = strings.ReplaceAll(clone, ":4444:", ":4444/")
 
 		//
 		// Should we exclude this entry?
