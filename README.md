@@ -45,7 +45,11 @@ Later in the week I can update all the repositories which have been cloned, pull
 
 # Installation
 
-You should be able to install this application using the standard golang approach:
+You should be able to install this application using the standard golang approach. For `go>=1.13` go modules must be enabled:
+
+    $ GO111MODULE=on go get github.com/skx/github2mr
+    
+For earlier versions:
 
     $ go get github.com/skx/github2mr
 
