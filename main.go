@@ -181,6 +181,7 @@ func main() {
 	//
 	// Parse flags
 	//
+	archived := flag.Bool("archived", false, "Include archived repositories in the output?")
 	api := flag.String("api", "https://api.github.com/", "The API end-point to use for the remote git-host.")
 	authHeader := flag.Bool("auth-header-token", false, "Use an authorization-header including 'token' rather than 'bearer'.\nThis is required for gitbucket, and perhaps other systems.")
 	exclude := flag.String("exclude", "", "Comma-separated list of repositories to exclude.")
@@ -359,6 +360,15 @@ func main() {
 	// Now format the repositories we've discovered.
 	//
 	for _, repo := range all {
+
+		//
+		// If the repository is archived then
+		// skip it, unless we're supposed to keep
+		// it.
+		//
+		if *repo.Archived && !*archived {
+			continue
+		}
 
 		//
 		// The clone-type is configurable
