@@ -75,6 +75,7 @@ You can run `github2mr -help` to see available options, but in brief:
   * Or the reverse, ignoring all personal-repositories.
 * You can exclude repositories by name.
 * You can default to cloning repositories via HTTP, instead of SSH.
+* By default all _archived_ repositories are excluded.
 
 
 ## Other Git Hosts
